@@ -1,0 +1,271 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+body{
+ height: 100vh;
+ width: 100vw;
+ display: flex;
+ flex-direction: column;
+}
+#backGround{
+  z-index: -200;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.headingContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(53, 122, 212);
+  min-height: 5.4rem;
+}
+h1{
+  padding: 1.2rem;
+  color: white;
+  font-size: clamp(1.2rem,5vw,2.3rem);
+  position: relative;
+  width: fit-content;
+}
+h1::before{
+  content: "";
+  position: absolute;
+  background-color: rgb(33, 31, 31);
+  width: 6rem;
+  height: 5.3rem;
+  top: 50%;
+  transform: translate(0,-50%);
+  animation: move 2s infinite linear alternate;
+  mix-blend-mode: difference;
+  border-radius: 0.1rem;
+}
+@keyframes move {
+0%{
+left: 0;
+}
+100%{
+left:calc(100% - 6rem);
+}
+}
+.container{
+  width: 90%;
+  margin: 5% auto;
+  height: fit-content;
+  background-color: rgb(218, 223, 228,.7);
+  /* margin-top: .5rem; */
+  padding: 1rem;
+  border-radius: .2rem;
+}
+.firstP{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(196, 221, 221);
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(0.3rem,4vw,1.4rem);
+}
+button{
+  width: 100%;
+  min-height: 3rem;
+  margin: 0.5rem 0 ;
+  border: none;
+  background-color: rgb(103, 164, 12);
+  font-size:clamp(0.3rem,4vw,1.4rem) ;
+  color: white;
+  cursor: pointer;
+  transition: background-color 1s ease;
+  animation: background 1s infinite ease alternate;
+}
+button:hover{
+  background-color: rgb(15, 79, 15)!important;
+}
+@keyframes background {
+  from{
+    background-color: rgb(103, 164, 12);
+  }
+  to{
+    background-color: rgb(75, 115, 16);
+  }
+}
+.typeTheWord{
+  display: none;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.5rem,4vw,4rem);
+  color:rgb(53, 122, 212) ;
+  font-weight: bold;
+  background-color: rgb(222, 232, 232);
+  margin-bottom:0.5rem ;
+  text-transform: capitalize;
+  user-select: none;
+}
+input{
+  width: 100%;
+  max-height: 3rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: clamp(0.3rem,4vw,1.4rem) ;
+  color: rgb(61, 6, 6);
+  text-transform: capitalize;
+  display: none;
+}
+.nextWordes{
+  margin: .5rem 0;
+}
+#possibleWords{
+  font-size: clamp(1rem,3vw,1.2rem);
+  font-weight: bold;
+}
+.words{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  background-color: rgb(222, 232, 232,.7);
+  min-height: 5rem;
+  gap: .3rem;
+  padding: .3rem;
+}
+.words span{
+  background-color: rgb(106, 162, 207);
+  font-size: clamp(1rem,3vw,1.2rem);
+  padding: .3rem;
+  color: rgb(7, 9, 29);
+  border-radius: .12rem;
+}
+.configurationArea{
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(.8rem,3vw,1.2rem);
+  font-weight: bold;
+}
+.time{
+  font-size: clamp(1rem,3vw,1.2rem);
+  font-weight: bold;
+  color: rgb(147, 99, 10);
+  
+}
+.wave{
+  position: fixed;
+  bottom: -20rem;
+  left: 50%;
+  transform: translate(-50%) skew(0,5deg);
+  width: 220rem;
+  height: 35rem;
+  z-index: -100;
+  background-color: rgb(53, 122, 212);
+  border-radius: 50%;
+  animation: wave 10s infinite ease-in-out alternate;
+  opacity: .8;
+}
+@keyframes wave {
+  from{
+    transform: translate(-50%) skew(0,5deg);
+  }
+  to{
+    transform: translate(-30%) skew(0,-5deg);
+  }
+}
+@media (max-width:649px){
+  .wave{
+    height: 30rem;
+  }
+}
+@media (min-width:1350px){
+  .wave{
+    width: 260rem;
+    height: 40rem;
+  }
+}
+@media (max-width:400px){
+  html{
+    font-size: 15px;
+  }
+}
+.youWin{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: clamp(15rem,70vw,60rem);
+  height: clamp(17rem,40vh,40rem);
+  background-color: rgb(53, 122, 212,.9);
+  border-radius: .5rem;
+  color: rgb(230, 215, 215);
+}
+h2{
+  width: 100%;
+  text-align: center;
+  font-size:clamp(2rem,5vw,2.3rem) ;
+  padding: 2rem;
+  transition: color 1s ease;
+  animation: color 1s infinite ease alternate;
+}
+@keyframes color{
+  from{
+    color: rgb(230, 215, 215);
+  }
+  to{
+    color: rgb(155, 220, 63);
+  }
+}
+.youWin p,.youLose p{
+  width: 100%;
+  font-size:clamp(1rem,5vw,2rem) ;
+  text-align: center;
+  padding: .4rem;
+}
+.youWin p span,.youLose p span{
+  color: rgb(165, 49, 7);
+  font-weight: bold;
+}
+.youWin div,.youLose div{
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  font-size:clamp(1rem,5vw,2rem) ;
+  color: black;
+}
+.youLose{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: clamp(15rem,70vw,60rem);
+  height: clamp(17rem,40vh,40rem);
+  background-color: rgb(53, 122, 212,.9);
+  border-radius: .5rem;
+  color: rgb(230, 215, 215);
+}
+.youLose h3{
+  width: 100%;
+  text-align: center;
+  font-size:clamp(2rem,7vw,2.6rem) ;
+  transition: color 1s ease;
+  animation: color2 1s infinite ease alternate;
+  color: red;
+}
+@keyframes color2{
+  from{
+    color: red;
+  }
+  to{
+    color: rgb(6, 10, 1);
+  }
+}
+

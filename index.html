@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing speed Test Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <img id="backGround" src="background.jpg" alt="back ground image">
+    <div class="headingContainer">
+      <h1>Typing speed Test Game</h1>
+    </div>
+    <div class="container">
+      <p class="firstP">
+        You Are Playing ON Level<span id="level"></span> & You Have <span id="seconds"></span> To
+        Type The Word
+      </p>
+      <button>Play Now!</button><br>
+      <p class="typeTheWord">The Word</p>
+      <input type="text" />
+      <div class="nextWordes">
+        <span id="possibleWords">Possible Words :</span>
+        <div class="words">
+        </div>
+      </div>
+      <div class="configurationArea">
+        <p>Time Left: <span id="timeLeft">...</span></p>
+        <p>Score: <span id="score">0</span> From <span id="maxScore">20</span></p>
+      </div><br>
+        <span class="time">Time 00:00</span>
+    </div>
+    <div class="wave"></div>
+    <div class="youWin">
+      <h2>You Win!</h1>
+        <p>Your Elapsed Time : <span id="winTime"></span></p>
+        <p>Your Final Rating : <span id="winRate"></span></p>
+        <div class="tryAgain1">Try Again?</div>
+    </div>
+    <div class="youLose">
+      <h3>You Lose!</h1>
+      <p>Your Elapsed Time : <span id="loseTime"></span></p>
+      <p>You have reached the word <span id="reachedWord"></span></p>
+      <p>Your Final Rating is : <span id="loseRate"></span></p>
+      <div class="tryAgain2">Try Again?</div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
