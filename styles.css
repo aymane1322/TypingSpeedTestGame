@@ -20,7 +20,7 @@ body{
   align-items: center;
   width: 100%;
   background-color: rgb(53, 122, 212);
-  min-height: 5.4rem;
+  height: 10vh;
 }
 h1{
   padding: 1.2rem;
@@ -34,7 +34,7 @@ h1::before{
   position: absolute;
   background-color: rgb(33, 31, 31);
   width: 6rem;
-  height: 5.3rem;
+  height: 10vh;
   top: 50%;
   transform: translate(0,-50%);
   animation: move 2s infinite linear alternate;
@@ -50,13 +50,24 @@ left:calc(100% - 6rem);
 }
 }
 .container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   width: 90%;
-  margin: 5% auto;
   height: fit-content;
   background-color: rgb(218, 223, 228,.7);
   /* margin-top: .5rem; */
   padding: 1rem;
   border-radius: .2rem;
+}
+@media(min-width:1000px){
+  .container{
+    width: 60vw;
+  }
+  html{
+    font-size: 22px;
+  }
 }
 .firstP{
   display: flex;
@@ -188,7 +199,7 @@ input{
     font-size: 15px;
   }
 }
-.youWin{
+.youWin,.youLose{
   display: none;
   align-items: center;
   justify-content: center;
@@ -202,6 +213,16 @@ input{
   background-color: rgb(53, 122, 212,.9);
   border-radius: .5rem;
   color: rgb(230, 215, 215);
+}
+@media(max-width:670px){
+  .youLose{
+    width:80vw
+  }
+}
+@media(max-width:376px){
+  .youLose{
+    width:95vw
+  }
 }
 h2{
   width: 100%;
@@ -219,38 +240,29 @@ h2{
     color: rgb(155, 220, 63);
   }
 }
-.youWin p,.youLose p{
+.loseContainer{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
   width: 100%;
-  font-size:clamp(1rem,5vw,2rem) ;
+}
+.youWin p,.youLose p{
+  font-size:clamp(1rem,4vw,1.5rem) ;
   text-align: center;
   padding: .4rem;
 }
 .youWin p span,.youLose p span{
-  color: rgb(165, 49, 7);
+  color: rgb(130, 11, 100);
   font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.youWin div,.youLose div{
+.youWin .tryAgain1,.youLose .tryAgain2{
   width: 100%;
   text-align: center;
   padding: 1rem;
   cursor: pointer;
   font-size:clamp(1rem,5vw,2rem) ;
   color: black;
-}
-.youLose{
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: clamp(15rem,70vw,60rem);
-  height: clamp(17rem,40vh,40rem);
-  background-color: rgb(53, 122, 212,.9);
-  border-radius: .5rem;
-  color: rgb(230, 215, 215);
 }
 .youLose h3{
   width: 100%;
