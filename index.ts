@@ -199,3 +199,6 @@ function randomNumber():number {
     }
     return emptyArray[0];
 }
+input.addEventListener("paste", (e) => {
+    e.preventDefault();
+})

@@ -164,4 +164,7 @@ function randomNumber() {
     }
     return emptyArray[0];
 }
+input.addEventListener("paste", (e) => {
+    e.preventDefault();
+});
 //# sourceMappingURL=index.js.map
