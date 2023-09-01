@@ -45,7 +45,7 @@ button.addEventListener("click", () => {
     generalTime();
     countDown(time);
     input.addEventListener("keyup", () => {
-        if (input.value === randomWords[currentWod]) {
+        if (input.value.toLowerCase() === randomWords[currentWod].toLowerCase()) {
             if (currentWod < randomWords.length - 1) {
                 input.value = '';
                 currentWod++;
