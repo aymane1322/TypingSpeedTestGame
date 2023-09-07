@@ -155,7 +155,7 @@ function gameOver(time: number) {// You LOse :
         loseRate.innerHTML = `${String(rate(gSeconds,scoreNumber))}/100`;
         reachedWord.innerHTML = `${scoreNumber} from ${randomWordsArray(Words[randomNumberVlue]).length} words`;
     }
-}
+} 
 //Try Again Function :
 function tryAgainF() {
     tryAgainLose.addEventListener("click", () => {
